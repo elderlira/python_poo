@@ -13,24 +13,24 @@
 class Carro:
 
     def __init__(self, modelo: str, cor: str, ano: int):
-        self.modelo = modelo
-        self.cor = cor
+        self.modelo = modelo.title()
+        self.cor = cor.title()
         self.ano = ano
 
 carro1 = Carro("Fiesta", "prata", 2013)
 
 class Restaurante:
     def __init__(self, nome, categoria, local, atendimento_online, ativo=False):
-        self.nome = nome
-        self.categoria = categoria
+        self.nome = nome.title()
+        self.categoria = categoria.upper()
         self.ativo = ativo
-        self.local = local
+        self.local = local.title()
         self.atendimento_online = atendimento_online
 
     def __str__(self):
         return f"O restaurante {self.nome} é do tipo {self.categoria}"
 
-pizzaria = Restaurante(nome = 'Noustra pizza', categoria='pizzaria italiana', local='Praca nossa senhora da luz', ativo=True)
+pizzaria = Restaurante(nome = 'noustra pizza', categoria='pizzaria italiana', local='Praca nossa senhora da luz',atendimento_online='Nao' ,ativo=True)
 print(pizzaria)
 
 
