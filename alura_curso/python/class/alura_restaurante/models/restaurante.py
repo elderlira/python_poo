@@ -29,6 +29,11 @@ class Restaurante:
            print(f"{restaurante._nome.ljust(25)} | {restaurante._categoria.ljust(25)} | {str(restaurante.media_avaliacao()).ljust(25)} | {restaurante.ativo}")
     
     def receber_avaliacao(self, cliente, nota):
+
+        if nota > 5:
+          nota -= 5
+          return self._avaliacao.append(Avaliacao(cliente, nota))
+        
         return self._avaliacao.append(Avaliacao(cliente, nota))
     
     def media_avaliacao(self):
